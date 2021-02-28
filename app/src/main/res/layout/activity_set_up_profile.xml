@@ -6,24 +6,24 @@
     android:layout_height="match_parent"
     android:background="#FAFAFA"
     android:padding="15dp"
-    tools:context=".otp_screen">
+    tools:context=".setUpProfileActivity">
 
-    <ImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/otp_verify" />
+        android:src="@drawable/avatar" />
 
     <TextView
         android:id="@+id/phoneLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
-        android:text="Verify"
+        android:text="Profile information"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/imageView"
@@ -38,7 +38,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="32dp"
         android:gravity="clip_horizontal|center"
-        android:text="Please enter the otp number to verify your mobile number"
+        android:text="Please set your name and profile picture"
         android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -69,23 +69,20 @@
             android:orientation="vertical">
 
             <EditText
-                android:id="@+id/otpView"
+                android:id="@+id/EtName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/textbox_outline"
                 android:ems="10"
-                android:inputType="number" />
+                android:hint="Enter your name"
+                android:inputType="textPersonName"
+                android:padding="10dp" />
 
             <Button
                 android:id="@+id/btnContinue"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Continue" />
-
-            <Button
-                android:id="@+id/otpResend"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="resend otp" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
