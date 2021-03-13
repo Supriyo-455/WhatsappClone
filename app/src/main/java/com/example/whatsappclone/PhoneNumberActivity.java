@@ -128,13 +128,19 @@ public class PhoneNumberActivity extends AppCompatActivity {
         finish();
     }
 
+    private void sendToSetUpProfilePage(){
+        Intent intent = new Intent(PhoneNumberActivity.this, setUpProfileActivity.class);
+        startActivity(intent);
+        finish();
+    }
+
     private void signIn(PhoneAuthCredential credential){
         mAuth.signInWithCredential(credential).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if(task.isSuccessful()){
                     Toast.makeText(PhoneNumberActivity.this, "Signed In", Toast.LENGTH_SHORT).show();
-                    sendToMain();
+                    sendToSetUpProfilePage();
                 }else{
                     Toast.makeText(PhoneNumberActivity.this, "Sign In failed", Toast.LENGTH_SHORT).show();
                 }
